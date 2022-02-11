@@ -106,13 +106,11 @@
 {{- define "DOIPart" }}
   {{- if .DOI }}
   <a href="https://doi.org/{{ .DOI }}"
-     itemprop="identifier"
-     itemtype="https://schema.org/URL">https://doi.org/{{- .DOI -}}</a>
+     itemprop="identifier">https://doi.org/{{- .DOI -}}</a>
   {{- else if .URL }}&#32;
   {{- i18n "apa_retrieved_from" | default "Retrieved from" -}}&#32;
   <a href="{{ .URL }}"
-     itemprop="identifier"
-     itemtype="https://schema.org/URL">{{ .URL }}</a>
+     itemprop="identifier">{{ .URL }}</a>
   {{- end -}}
 {{- end -}}
 {{- /* END DOI*/ -}}
@@ -160,7 +158,7 @@
   ){{- end -}}.
   {{ if isset . "publisher-place" -}}
   <meta itemprop="contentLocation"
-        value="{{- echoParam . "publisher-place" -}}">
+        content="{{- echoParam . "publisher-place" -}}">
   {{- end -}}
   {{- with .publisher -}}&#32;
   <span itemprop="publisher"
@@ -213,7 +211,7 @@
   ){{- end -}}.
   {{ if isset . "publisher-place" -}}
   <meta itemprop="contentLocation"
-        value="{{- echoParam . "publisher-place" -}}">
+        content="{{- echoParam . "publisher-place" -}}">
   {{- end -}}
   {{- with .publisher -}}
     &#32;<span itemprop="publisher"
@@ -335,7 +333,7 @@
     {{- end -}}.&#32;
 {{- if isset . "publisher-place" -}}
   <meta itemprop="locationCreated"
-        value="{{- echoParam . "publisher-place" -}}">
+        content="{{- echoParam . "publisher-place" -}}">
   {{- end -}}
   {{- with .publisher -}}
   <span itemprop="publisher"
@@ -367,7 +365,7 @@
     {{- end -}}.&nbsp;
   {{- if isset . "publisher-place" -}}
   <meta itemprop="contentLocation"
-        value="{{- echoParam . "publisher-place" -}}">
+        content="{{- echoParam . "publisher-place" -}}">
   {{- end -}}
   {{- with .publisher -}}
   <span itemprop="Organization"

@@ -94,7 +94,8 @@
 {{- if gt (len $bibliographyPath) 0 -}}{{- /* Begin Bibliography Loop */ -}}
 {{- $bibliography := getJSON $bibliographyPath -}}
 {{- /* -------------------- END Bibliography path -------------------- */ -}}
-  <span class="hugo-cite-intext" itemprop="citation">
+<span itemscope>
+<span class="hugo-cite-intext" itemprop="citation">
     {{- /* Range over citation keys */ -}}
     {{- range $keyIndex, $key := $keys -}}
       {{- range where $bibliography "id" "eq" $key -}}
@@ -181,3 +182,4 @@
     {{- end -}}
     {{- /* END loop over keys*/ -}}
     </span>
+  </span>  
